@@ -1,0 +1,13 @@
+section,
+footer {
+	@apply p-4 md:p-6 lg:p-8;
+}
+section,
+footer {
+	& > div {
+		@apply container mx-auto;
+	}
+}
+section:first-child {
+	@apply pt-24 md:pt-28 lg:pt-32;
+}

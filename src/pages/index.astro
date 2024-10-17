@@ -1,15 +1,24 @@
 ---
-
+import MainLayout from '../layouts/MainLayout.astro'
 ---
 
-<html lang='en'>
-	<head>
-		<meta charset='utf-8' />
-		<meta name='viewport' content='width=device-width' />
-		<meta name='generator' content={Astro.generator} />
-		<title></title>
-	</head>
-	<body>
-		<h1></h1>
-	</body>
-</html>
+<MainLayout>
+	<section id='work-history'>
+		<div>
+			<h2>Work History</h2>
+			<p>Details about my work experience...</p>
+		</div>
+	</section>
+	<section id='projects'>
+		<div>
+			<h2>Portfolio</h2>
+			<p>Showcase of my work...</p>
+		</div>
+	</section>
+	<section id='achievements'>
+		<div>
+			<h2>Achievements</h2>
+			<p>List of my achievements...</p>
+		</div>
+	</section>
+</MainLayout>
