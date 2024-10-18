@@ -1,21 +1,31 @@
 ---
 import { Icon } from 'astro-icon/components'
+import { prismicClient } from '../clients/prismic'
+
+const globalPage = await prismicClient.getSingle('global')
+const { data: global } = globalPage
 ---
 
 <footer>
 	<div
 		class='container mx-auto sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-5xl p-4 md:p-6 lg:p-8'>
-		<ul class='flex space-x-4 justify-end items-center text-2xl'>
-			<li>
-				<a href='https://github.com/wjd3' target='_blank' rel='noopener noreferrer'>
-					<Icon name='mynaui:brand-github-solid' />
-				</a>
-			</li>
-			<li>
-				<a href='https://linkedin.com/in/wjdiii' target='_blank' rel='noopener noreferrer'>
-					<Icon name='mynaui:brand-linkedin-solid' />
-				</a>
-			</li>
-		</ul>
+		{
+			global?.contact_links?.length > 0 ? (
+				<ul class='flex space-x-4 justify-end items-center text-2xl'>
+					{global.contact_links.map((contact_link: any) => {
+						return (
+							<li>
+								<a
+									href={contact_link.link.url}
+									target={contact_link.link.target}
+									rel='noopener noreferrer'>
+									<Icon name={`mynaui:${contact_link.icon[0].text}`} />
+								</a>
+							</li>
+						)
+					})}
+				</ul>
+			) : null
+		}
 	</div>
 </footer>
