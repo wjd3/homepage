@@ -37,6 +37,13 @@ const { data: seo } = seoPage
 		<meta property='og:title' content={seo.title[0].text} />
 		<meta property='og:description' content={seo.description[0].text} />
 		<meta property='og:image' content={seo.image.url} />
+		<meta property='og:url' content={Astro.site} />
+		<meta property='og:type' content='website' />
+		<meta property='og:site_name' content={seo.title[0].text} />
+		<meta name='twitter:card' content='summary_large_image' />
+		<meta name='twitter:title' content={seo.title[0].text} />
+		<meta name='twitter:description' content={seo.description[0].text} />
+		<meta name='twitter:image' content={seo.image.url} />
 
 		<!-- Sitemap -->
 		<link rel='sitemap' href='/sitemap-index.xml' />
