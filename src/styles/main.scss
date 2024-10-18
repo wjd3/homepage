@@ -13,7 +13,7 @@ html {
 
 // Sections/Footer
 section {
-	@apply p-4 md:p-6 lg:p-8;
+	@apply px-4 md:px-6 lg:px-8 py-2 md:py-4 lg:py-6;
 }
 section {
 	& > div {
@@ -63,7 +63,7 @@ textarea {
 
 // Rich Text
 .rich-text {
-	@apply text-lg;
+	@apply text-lg flex flex-col space-y-2;
 
 	ul {
 		@apply list-disc list-inside;

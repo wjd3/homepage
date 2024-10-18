@@ -5,7 +5,7 @@ This website showcases my work, skills, and experiences as a developer.
 ## Table of Contents
 
 - [Bio](#bio)
-- [Wins](#wins)
+- [Achievements](#achievements)
 - [Projects](#projects)
 - [Contact](#contact)
 
@@ -13,9 +13,9 @@ This website showcases my work, skills, and experiences as a developer.
 
 A brief overview of my background, skills, and interests.
 
-## Wins
+## Achievements
 
-Some of my notable achievements and milestones.
+Some of my notable milestones.
 
 ## Projects
 
