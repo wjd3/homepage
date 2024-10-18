@@ -1,9 +1,13 @@
 ---
 import Nav from '../components/Nav.astro'
 import Footer from '../components/Footer.astro'
-import Seo from '../components/Seo.astro'
 
 import '../styles/main.scss'
+
+import { prismicClient } from '../clients/prismic'
+
+const seoPage = await prismicClient.getSingle('seo')
+const { data: seo } = seoPage
 ---
 
 <html lang='en'>
@@ -21,11 +25,11 @@ import '../styles/main.scss'
 		/>
 
 		<!-- SEO -->
-		<Seo
-			title='WJD3'
-			description='Liam Davis, a web developer with 4+ years of experience in Next.js, SvelteKit, Astro, SQL, and React Native, is available for hire and contract work.'
-			ogImage='/path/to/image.jpg'
-		/>
+		<title>{seo.title[0].text}</title>
+		<meta name='description' content={seo.description[0].text} />
+		<meta property='og:title' content={seo.title[0].text} />
+		<meta property='og:description' content={seo.description[0].text} />
+		<meta property='og:image' content={seo.image.url} />
 	</head>
 	<body class='min-h-[100dvh] flex flex-col justify-between'>
 		<Nav />

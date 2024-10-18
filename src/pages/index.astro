@@ -1,8 +1,13 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
-
 import { Image } from 'astro:assets'
-import Me from '../images/me.jpg'
+import { prismicClient } from '../clients/prismic'
+import * as prismic from '@prismicio/client'
+
+const homePage = await prismicClient.getSingle('home')
+const { data: home } = homePage
+
+const serializer = {}
 ---
 
 <MainLayout>
@@ -10,42 +15,40 @@ import Me from '../images/me.jpg'
 	<section id='bio'>
 		<div>
 			<div
-				class='relative mb-2 w-28 h-28 after:content-[""] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-[#b3927c10] after:rounded-md after:pointer-events-none'>
+				class='relative mb-2 w-28 h-28 after:content-[""] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-clam-shell-500/10 after:rounded-md after:pointer-events-none'>
 				<Image
 					class='rounded-md w-full h-full object-cover grayscale'
-					src={Me}
-					alt='Profile Picture'
+					src={home.profile_pic.url}
+					inferSize
+					alt={home.profile_pic.alt}
 					widths={[100, 200, 400]}
 					sizes='(max-width: 640px) 100px, (max-width: 1024px) 200px, 400px'
 				/>
 			</div>
-			<h2>Biography</h2>
-			<p>Details about my work experience...</p>
+			<h2 class='sr-only text-2xl font-bold'>Bio</h2>
+			<div class='rich-text'>
+				<Fragment set:html={prismic.asHTML(home.biography, { serializer })} />
+			</div>
 		</div>
 	</section>
 
 	<!-- Wins -->
 	<section id='wins'>
 		<div>
-			<h2>Wins</h2>
-			<p>List of my wins...</p>
+			<h2 class='text-2xl font-bold'>Wins</h2>
+			<div class='rich-text'>
+				<Fragment set:html={prismic.asHTML(home.wins, { serializer })} />
+			</div>
 		</div>
 	</section>
 
 	<!-- Projects -->
 	<section id='projects'>
 		<div>
-			<h2>Projects</h2>
-			<p>Showcase of my work...</p>
+			<h2 class='text-2xl font-bold'>Projects</h2>
+			<div class='rich-text'>
+				<Fragment set:html={prismic.asHTML(home.projects, { serializer })} />
+			</div>
 		</div>
 	</section>
 </MainLayout>
-
-<style lang='scss'>
-	h2 {
-		@apply text-2xl font-bold;
-	}
-	p {
-		@apply text-xl;
-	}
-</style>

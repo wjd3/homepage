@@ -23,7 +23,7 @@ section {
 
 // Fonts/Text
 body {
-	@apply font-body bg-steel-gray-50 dark:bg-gun-powder-950 text-gun-powder-900 dark:text-venus-200 transition-[background-color];
+	@apply font-body bg-steel-gray-50 dark:bg-gun-powder-950 transition-[background-color] text-gun-powder-900 dark:text-venus-200;
 }
 h1,
 h2,
@@ -58,5 +58,14 @@ textarea {
 
 	&:focus {
 		@apply border-dawn-pink-500 dark:border-dawn-pink-400 outline-none;
+	}
+}
+
+// Rich Text
+.rich-text {
+	@apply text-lg;
+
+	ul {
+		@apply list-disc list-inside;
 	}
 }
