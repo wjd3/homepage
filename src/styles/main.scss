@@ -1,3 +1,34 @@
+// Fonts/Text
+body {
+	@apply font-body bg-steel-gray-50 dark:bg-gun-powder-950 text-gun-powder-900 dark:text-venus-200 transition-[background-color];
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	@apply font-header;
+}
+
+// Button and Links
+button {
+	@apply bg-clam-shell-500 text-venus-100 dark:bg-clam-shell-600 dark:text-gun-powder-950 py-2 px-4 rounded transition-[background-color] duration-300 ease-in-out;
+
+	&:hover {
+		@apply bg-clam-shell-600 dark:bg-clam-shell-500;
+	}
+}
+
+a {
+	@apply text-dawn-pink-500 dark:text-dawn-pink-400 transition-colors duration-300 ease-in-out;
+
+	&:hover {
+		@apply underline;
+	}
+}
+
+// Sections/Footer
 section,
 footer {
 	@apply p-4 md:p-6 lg:p-8;
@@ -10,4 +41,14 @@ footer {
 }
 section:first-child {
 	@apply pt-24 md:pt-28 lg:pt-32;
+}
+
+// Forms
+input,
+textarea {
+	@apply bg-venus-100 dark:bg-steel-gray-700 text-gun-powder-900 dark:text-venus-200 border border-gun-powder-300 dark:border-gun-powder-600 py-2 px-4 rounded transition-colors duration-300 ease-in-out;
+
+	&:focus {
+		@apply border-dawn-pink-500 dark:border-dawn-pink-400 outline-none;
+	}
 }

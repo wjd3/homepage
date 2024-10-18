@@ -1,6 +1,7 @@
 ---
 import Nav from '../components/Nav.astro'
 import Footer from '../components/Footer.astro'
+import Seo from '../components/Seo.astro'
 
 import '../styles/main.scss'
 ---
@@ -10,7 +11,17 @@ import '../styles/main.scss'
 		<meta charset='utf-8' />
 		<meta name='viewport' content='width=device-width' />
 		<meta name='generator' content={Astro.generator} />
-		<title>Portfolio Home</title>
+
+		<!-- Fonts -->
+		<link rel='preconnect' href='https://fonts.googleapis.com' />
+		<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+		<link
+			href='https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap'
+			rel='stylesheet'
+		/>
+
+		<!-- SEO -->
+		<Seo title='Your Page Title' description='Your page description' ogImage='/path/to/image.jpg' />
 	</head>
 	<body>
 		<Nav />
