@@ -37,6 +37,9 @@ const { data: seo } = seoPage
 		<meta property='og:title' content={seo.title[0].text} />
 		<meta property='og:description' content={seo.description[0].text} />
 		<meta property='og:image' content={seo.image.url} />
+
+		<!-- Sitemap -->
+		<link rel='sitemap' href='/sitemap-index.xml' />
 	</head>
 	<body class='min-h-[100dvh] flex flex-col justify-between'>
 		<Nav />
@@ -44,5 +47,21 @@ const { data: seo } = seoPage
 			<slot />
 		</main>
 		<Footer />
+
+		<!-- Simple Analytics -->
+		{
+			import.meta.env.MODE !== 'development' ? (
+				<>
+					<script is:inline async defer src='https://scripts.simpleanalyticscdn.com/latest.js' />
+					<noscript>
+						<img
+							src='https://queue.simpleanalyticscdn.com/noscript.gif'
+							alt=''
+							referrerpolicy='no-referrer-when-downgrade'
+						/>
+					</noscript>
+				</>
+			) : null
+		}
 	</body>
 </html>

@@ -1,8 +1,15 @@
 ---
+import { Icon } from 'astro-icon/components'
 import MainLayout from '../layouts/MainLayout.astro'
 ---
 
 <MainLayout>
-	<h1>404</h1>
-	<p>Page not found</p>
+	<!-- 404 Error Message -->
+	<section>
+		<div class='flex flex-col items-center justify-center space-y-2 pt-44 sm:pt-36 text-lg'>
+			<Icon class='w-16 h-16' name='mynaui:location-slash' />
+			<h1 class='text-2xl font-bold'>Page Not Found</h1>
+			<p>You must be looking for <a class='inline-block' href='/'>this</a>.</p>
+		</div>
+	</section>
 </MainLayout>
