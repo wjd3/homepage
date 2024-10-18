@@ -1,9 +1,24 @@
+// Scroll Behavior
+html {
+	@apply scroll-smooth;
+}
+
 // Text Selection
 ::selection {
 	@apply bg-dawn-pink-500 text-venus-100;
 }
 ::-moz-selection {
 	@apply bg-dawn-pink-500 text-venus-100;
+}
+
+// Sections/Footer
+section {
+	@apply p-4 md:p-6 lg:p-8;
+}
+section {
+	& > div {
+		@apply container mx-auto sm:max-w-md md:max-w-xl lg:max-w-3xl xl:max-w-4xl;
+	}
 }
 
 // Fonts/Text
@@ -33,18 +48,6 @@ a {
 
 	&:hover {
 		@apply underline text-dawn-pink-600 dark:text-dawn-pink-300;
-	}
-}
-
-// Sections/Footer
-section,
-footer {
-	@apply p-4 md:p-6 lg:p-8;
-}
-section,
-footer {
-	& > div {
-		@apply container mx-auto sm:max-w-md md:max-w-xl lg:max-w-3xl xl:max-w-4xl;
 	}
 }
 

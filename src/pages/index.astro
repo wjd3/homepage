@@ -1,24 +1,51 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
+
+import { Image } from 'astro:assets'
+import Me from '../images/me.jpg'
 ---
 
 <MainLayout>
+	<!-- Bio -->
 	<section id='bio'>
 		<div>
-			<h2>Bio</h2>
+			<div
+				class='relative mb-2 w-28 h-28 after:content-[""] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-[#b3927c10] after:rounded-md after:pointer-events-none'>
+				<Image
+					class='rounded-md w-full h-full object-cover grayscale'
+					src={Me}
+					alt='Profile Picture'
+					widths={[100, 200, 400]}
+					sizes='(max-width: 640px) 100px, (max-width: 1024px) 200px, 400px'
+				/>
+			</div>
+			<h2>Biography</h2>
 			<p>Details about my work experience...</p>
 		</div>
 	</section>
+
+	<!-- Wins -->
+	<section id='wins'>
+		<div>
+			<h2>Wins</h2>
+			<p>List of my wins...</p>
+		</div>
+	</section>
+
+	<!-- Projects -->
 	<section id='projects'>
 		<div>
 			<h2>Projects</h2>
 			<p>Showcase of my work...</p>
 		</div>
 	</section>
-	<section id='achievements'>
-		<div>
-			<h2>Achievements</h2>
-			<p>List of my achievements...</p>
-		</div>
-	</section>
 </MainLayout>
+
+<style lang='scss'>
+	h2 {
+		@apply text-2xl font-bold;
+	}
+	p {
+		@apply text-xl;
+	}
+</style>
