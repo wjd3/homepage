@@ -36,10 +36,10 @@ h6 {
 
 // Button and Links
 button {
-	@apply bg-clam-shell-500 text-venus-100 dark:text-gun-powder-950 border border-clam-shell-600 dark:border-clam-shell-400 py-2 px-4 rounded transition-[background-color] duration-300 ease-in-out;
+	@apply bg-dawn-pink-500 text-venus-100 dark:text-gun-powder-950 border border-dawn-pink-600 dark:border-dawn-pink-400 py-2 px-4 rounded transition-[background-color] duration-300 ease-in-out;
 
 	&:hover {
-		@apply bg-clam-shell-600 dark:bg-clam-shell-400 border-clam-shell-500 dark:border-clam-shell-300;
+		@apply bg-dawn-pink-600 dark:bg-dawn-pink-400 border-dawn-pink-500 dark:border-dawn-pink-300;
 	}
 }
 
