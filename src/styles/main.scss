@@ -1,6 +1,6 @@
 // Fonts/Text
 body {
-	@apply font-body bg-steel-gray-50 dark:bg-gun-powder-950 text-gun-powder-900 dark:text-venus-200 transition-[background-color];
+	@apply font-body bg-steel-gray-50 dark:bg-gun-powder-950 text-gun-powder-900 dark:text-venus-200 transition-[background-color] min-h-[100dvh] flex flex-col justify-between;
 }
 h1,
 h2,
@@ -13,10 +13,10 @@ h6 {
 
 // Button and Links
 button {
-	@apply bg-clam-shell-500 text-venus-100 dark:bg-clam-shell-600 dark:text-gun-powder-950 py-2 px-4 rounded transition-[background-color] duration-300 ease-in-out;
+	@apply bg-clam-shell-500 text-venus-100 dark:text-gun-powder-950 border border-clam-shell-600 dark:border-clam-shell-400 py-2 px-4 rounded transition-[background-color] duration-300 ease-in-out;
 
 	&:hover {
-		@apply bg-clam-shell-600 dark:bg-clam-shell-500;
+		@apply bg-clam-shell-600 dark:bg-clam-shell-400 border-clam-shell-500 dark:border-clam-shell-300;
 	}
 }
 
@@ -24,7 +24,7 @@ a {
 	@apply text-dawn-pink-500 dark:text-dawn-pink-400 transition-colors duration-300 ease-in-out;
 
 	&:hover {
-		@apply underline;
+		@apply underline text-dawn-pink-600 dark:text-dawn-pink-300;
 	}
 }
 
@@ -36,7 +36,7 @@ footer {
 section,
 footer {
 	& > div {
-		@apply container mx-auto;
+		@apply container mx-auto sm:max-w-md md:max-w-xl lg:max-w-3xl xl:max-w-4xl;
 	}
 }
 section:first-child {
