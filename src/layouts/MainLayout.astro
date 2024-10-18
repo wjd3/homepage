@@ -21,11 +21,15 @@ import '../styles/main.scss'
 		/>
 
 		<!-- SEO -->
-		<Seo title='Your Page Title' description='Your page description' ogImage='/path/to/image.jpg' />
+		<Seo
+			title='WJD3'
+			description='Liam Davis, a web developer with 4+ years of experience in Next.js, SvelteKit, Astro, SQL, and React Native, is available for hire and contract work.'
+			ogImage='/path/to/image.jpg'
+		/>
 	</head>
-	<body>
+	<body class='min-h-[100dvh] flex flex-col justify-between'>
 		<Nav />
-		<main>
+		<main class='flex-1'>
 			<slot />
 		</main>
 		<Footer />

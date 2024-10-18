@@ -1,6 +1,14 @@
+// Text Selection
+::selection {
+	@apply bg-dawn-pink-500 text-venus-100;
+}
+::-moz-selection {
+	@apply bg-dawn-pink-500 text-venus-100;
+}
+
 // Fonts/Text
 body {
-	@apply font-body bg-steel-gray-50 dark:bg-gun-powder-950 text-gun-powder-900 dark:text-venus-200 transition-[background-color] min-h-[100dvh] flex flex-col justify-between;
+	@apply font-body bg-steel-gray-50 dark:bg-gun-powder-950 text-gun-powder-900 dark:text-venus-200 transition-[background-color];
 }
 h1,
 h2,
@@ -38,9 +46,6 @@ footer {
 	& > div {
 		@apply container mx-auto sm:max-w-md md:max-w-xl lg:max-w-3xl xl:max-w-4xl;
 	}
-}
-section:first-child {
-	@apply pt-24 md:pt-28 lg:pt-32;
 }
 
 // Forms

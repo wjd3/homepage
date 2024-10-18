@@ -73,7 +73,7 @@ export default {
 				900: '#60493c',
 				950: '#33241c'
 			},
-
+			transparent: '#00000000',
 			extend: {}
 		}
 	},
